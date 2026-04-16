@@ -8,7 +8,7 @@
     <style>
         /* 2011 BLOGG-STIL */
         body {
-            background-color: #fce4ec; /* Lys rosa bakgrunn */
+            background-color: #fce4ec;
             background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -24,36 +24,39 @@
             box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
         }
 
-        /* Header */
         header {
-            height: 350px;
+            height: 300px;
             background-color: #ffc1e3;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 3px solid #ff80ab;
             position: relative;
-            overflow: hidden;
         }
 
         header h1 {
             font-family: 'Lobster', cursive;
             font-size: 80px;
             color: #fff;
-            text-shadow: 3px 3px 0px #ff4081, 6px 6px 0px rgba(0,0,0,0.1);
-            z-index: 2;
+            text-shadow: 3px 3px 0px #ff4081;
         }
 
-        header::after {
-            content: "♥ ♥ ♥ ♥ ♥";
-            position: absolute;
-            bottom: 10px;
+        nav {
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ffc1e3;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
             color: #ff4081;
-            font-size: 20px;
-            letter-spacing: 10px;
+            text-decoration: none;
         }
 
-        /* Layout */
         #content-wrapper {
             display: flex;
             padding: 20px;
@@ -70,94 +73,63 @@
             padding-left: 20px;
         }
 
-        /* Bloggposter */
+        /* Innlegg-styling */
         article {
-            margin-bottom: 50px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
             padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
 
-        .post-date {
-            font-style: italic;
-            font-size: 12px;
-            color: #999;
-        }
-
-        h2 {
+        .post-title {
             color: #ff4081;
             font-family: 'Lobster', cursive;
-            font-size: 32px;
-            margin: 10px 0;
-        }
-
-        .post-content {
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        .post-footer {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #ff80ab;
-            font-weight: bold;
-        }
-
-        /* Sidemeny-elementer */
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            background-color: #eee;
-            border: 3px solid #ff80ab;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-style: italic;
-            color: #999;
-        }
-
-        .sidebar-box {
-            margin-bottom: 30px;
-        }
-
-        .sidebar-box h3 {
-            background-color: #ff80ab;
-            color: white;
-            padding: 5px;
-            font-size: 16px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        /* Linker */
-        a {
-            color: #ff4081;
+            font-size: 28px;
+            cursor: pointer;
             text-decoration: none;
+            display: block;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .post-title:hover {
             color: #c60055;
         }
 
-        /* Navigasjon */
-        nav {
-            background: #fff;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ffc1e3;
+        .post-date {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 10px;
         }
 
-        nav a {
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
+        /* Kommentarfelt-styling */
+        .comment-section {
+            display: none; /* Skjult som standard */
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff5f8;
+            border-radius: 5px;
+        }
+
+        .comment {
+            border-bottom: 1px dotted #ff80ab;
+            padding: 10px 0;
             font-size: 13px;
         }
 
-        .heart {
+        .comment-author {
+            font-weight: bold;
             color: #ff4081;
         }
+
+        .comment-meta {
+            font-size: 10px;
+            color: #aaa;
+        }
+
+        /* Sidebar */
+        .sidebar-box { margin-bottom: 25px; }
+        .sidebar-box h3 { background: #ff80ab; color: white; padding: 5px; font-size: 14px; text-align: center; }
+        .profile-pic { width: 100%; height: 200px; background: #eee; border: 2px solid #ff80ab; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #999; font-style: italic; }
+
+        .heart { color: #ff4081; }
     </style>
 </head>
 <body>
@@ -170,108 +142,129 @@
     <nav>
         <a href="#">Hjem</a>
         <a href="#">Bilder</a>
-        <a href="#">Om meg</a>
+        <a href="#">Om Ingvild</a>
         <a href="#">Kontakt</a>
     </nav>
 
     <div id="content-wrapper">
         <main>
             <article>
-                <div class="post-date">12.10.2011 - kl. 14:32</div>
-                <h2>ROSA ER IKKE BARE EN FARGE, DET ER EN LIVSSTIL! <span class="heart">♥</span></h2>
-                <div class="post-content">
-                    <p>Hei alle sammen! Unnskyld for lite blogging i det siste, men jeg har vært så opptatt med å shoppe! Var på senteret i dag og gjett hva?? Jeg fant den PERFEKTE cardiganen i den fineste rosafargen jeg noensinne har sett! *dåner*</p>
-                    <p>Føler liksom at livet blir 1000 ganger bedre med en gang man har på seg noe rosa. Rommet mitt begynner også å se helt gjennomført ut nå. Mamma sier det begynner å bli litt mye, men kan det egentlig bli for mye rosa?? Svaret er NEI! Hehe.</p>
-                    <p>Hva er deres favorittfarge? Blogges!</p>
+                <div class="post-date">Publisert: 12.10.2011 kl 15:20</div>
+                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c1')">ROSA LIVSSTIL! <span class="heart">♥</span></a>
+                <p>Oisann! Se hva jeg kjøpte i dag! En helt nydelig lipgloss og en genser. Gjetter dere fargen? Hehe!</p>
+                <div class="post-footer" style="font-size:12px; color:#ff80ab;">Klikk på overskriften for å se kommentarer...</div>
+
+                <div id="c1" class="comment-section">
+                    <h4>Kommentarer:</h4>
+                    <div class="comment">
+                        <span class="comment-author">Maiken:</span> SÅ fin!!! Hvor er genseren fra?? <span class="heart">♥</span><br>
+                        <span class="comment-meta">12.10.2011 kl 15:45</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Anonym:</span> Du er så pen Ingvild! Elsker bloggen din! :D<br>
+                        <span class="comment-meta">12.10.2011 kl 16:10</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Lise:</span> du bruker alt for mye rosa... :S<br>
+                        <span class="comment-meta">12.10.2011 kl 17:00</span>
+                    </div>
                 </div>
-                <div class="post-footer">Kommentarer (14) - Kategori: Hverdag</div>
             </article>
 
             <article>
-                <div class="post-date">10.10.2011 - kl. 21:15</div>
-                <h2>Gutteproblemer... sukk :-(</h2>
-                <div class="post-content">
-                    <p>Ok, jeg må bare få ut litt frustrasjon. Hvorfor er gutter så kompliserte?? Jeg har snappet litt med en søt gutt i det siste (vet han følger bloggen, så tør ikke si navn!!), men nå har han ikke svart på tre timer...</p>
-                    <p>Jakten på drømmeprinsen fortsetter, men akkurat nå føles det som om jeg kommer til å ende opp som en "crazy cat lady" – bare med rosa katter da, såklart! Skal det være så vanskelig å finne en som er snill, kjekk og som tåler at jeg bruker 2 timer på badet? Tips mottas med takk!!</p>
+                <div class="post-date">10.10.2011 kl 20:05</div>
+                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c2')">Gutte-drama og sukkerspinn...</a>
+                <p>Hvorfor er gutter så teite? Blir så oppgitt. Drømmeprinsen finnes vel bare i Disney-filmer? :(</p>
+                
+                <div id="c2" class="comment-section">
+                    <h4>Kommentarer:</h4>
+                    <div class="comment">
+                        <span class="comment-author">Silje:</span> Ååå vennen, han fortjener deg ikke!! <span class="heart">♥</span><br>
+                        <span class="comment-meta">10.10.2011 kl 20:30</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Peder_94:</span> jeg kan være drømmeprinsen din ;) hehe neida. fin blogg!<br>
+                        <span class="comment-meta">10.10.2011 kl 21:00</span>
+                    </div>
                 </div>
-                <div class="post-footer">Kommentarer (22) - Kategori: Tanker og følelser</div>
             </article>
 
             <article>
-                <div class="post-date">08.10.2011 - kl. 11:00</div>
-                <h2>DRØMMEN OM BERGEN OG 21 KM! <span class="heart">♥</span></h2>
-                <div class="post-content">
-                    <p>Hører dere, jeg har bestemt meg! Jeg SKAL flytte til Bergen etter hvert. Det er bare noe med den byen... brostein, de syv fjell og den koselige atmosfæren. Tenk å bo i en liten leilighet der og bare løpe rundt i regnet (i rosa regntøy selvfølgelig!).</p>
-                    <p>Og målet mitt for 2012/2013? Jeg skal løpe <b>Bergen Halvmaraton</b>! Jepp, dere hørte riktig. 2,1 mil! Jeg har allerede begynt å se på rosa løpesko fra Nike. Hvis jeg skal klare å løpe så langt, må utstyret i hvert fall være på plass. Noen andre som skal løpe der?</p>
+                <div class="post-date">08.10.2011 kl 12:00</div>
+                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c3')">BERGEN HALVMARATON 2012?!</a>
+                <p>Nå er det bestemt! Jeg skal flytte til Bergen og løpe halvmaraton. Har kjøpt rosa løpeshorts allerede!</p>
+                
+                <div id="c3" class="comment-section">
+                    <h4>Kommentarer:</h4>
+                    <div class="comment">
+                        <span class="comment-author">Løpe-Lise:</span> Så flink du er! Bergen er verdens fineste by!<br>
+                        <span class="comment-meta">08.10.2011 kl 13:00</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Sander:</span> 2,1 mil er langt da.. lykke til haha!<br>
+                        <span class="comment-meta">08.10.2011 kl 14:15</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Mamma:</span> Gleder meg til du flytter hjemmefra (neida, tulla!) Lykke til vennen! <span class="heart">♥</span><br>
+                        <span class="comment-meta">08.10.2011 kl 15:00</span>
+                    </div>
                 </div>
-                <div class="post-footer">Kommentarer (9) - Kategori: Trening & Drømmer</div>
             </article>
 
             <article>
-                <div class="post-date">05.10.2011 - kl. 19:40</div>
-                <h2>Dagens outfit / OOTD</h2>
-                <div class="post-content">
-                    <p>I dag har jeg på meg:</p>
-                    <ul>
-                        <li>Tights fra H&M</li>
-                        <li>Rosa tunika fra BikBok</li>
-                        <li>Smykke fra Glitter</li>
-                        <li>Uggs (elsker dem!!!)</li>
-                    </ul>
-                    <p><i>(Skulle lagt ut bilde, men kameraet mitt er tomt for strøm... typisk meg!! Legger ut bilde i morgen i stedet, lover!)</i></p>
+                <div class="post-date">05.10.2011 kl 18:30</div>
+                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c4')">Dagens outfit - OOTD</a>
+                <p>Outfiten min i dag er veldig inspirert av Barbie! Elsker det!</p>
+                
+                <div id="c4" class="comment-section">
+                    <h4>Kommentarer:</h4>
+                    <div class="comment">
+                        <span class="comment-author">Hater:</span> du tror du er så deilig...<br>
+                        <span class="comment-meta">05.10.2011 kl 19:00</span>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-author">Ingvild:</span> @Hater: Og du har ikke noe liv som kommenterer her, hehe! <span class="heart">♥</span><br>
+                        <span class="comment-meta">05.10.2011 kl 19:10</span>
+                    </div>
                 </div>
-                <div class="post-footer">Kommentarer (5) - Kategori: Outfit</div>
             </article>
 
-            <article>
-                <div class="post-date">03.10.2011 - kl. 22:10</div>
-                <h2>Nattasuss til mine faste lesere!</h2>
-                <div class="post-content">
-                    <p>Nå ligger jeg i den rosa senga mi og ser på Paradise Hotel. Blir så inspirert av alle de fine menneskene der! Skal sove nå så jeg er uthvilt til skolen i morgen. Vi har matteprøve... ønsk meg lykke til, jeg trenger det!</p>
-                    <p>Husk at dere er verdifulle! Klem fra Ingvild Tangen Lægren <span class="heart">♥</span></p>
-                </div>
-                <div class="post-footer">Kommentarer (31) - Kategori: Hverdag</div>
-            </article>
         </main>
 
         <aside>
             <div class="sidebar-box">
-                <h3>Om meg</h3>
-                <div class="profile-pic">[Bilde av Ingvild her]</div>
-                <p><b>Navn:</b> Ingvild Tangen Lægren</p>
-                <p><b>Alder:</b> 17 år (snart 18!!)</p>
-                <p><b>Bosted:</b> Der det skjer</p>
-                <p>Velkommen til min lille rosa boble på nettet! Her skriver jeg om mote, trening, gutter og alt som gjør livet herlig!</p>
+                <h3>Om Ingvild</h3>
+                <div class="profile-pic">[Bilde av Ingvild]</div>
+                <p>Jente på 17 år som elsker alt som er rosa! Velkommen til min verden!</p>
             </div>
-
-            <div class="sidebar-box">
-                <h3>Kategorier</h3>
-                <p>» Hverdag</p>
-                <p>» Outfit</p>
-                <p>» Trening</p>
-                <p>» Tanker</p>
-            </div>
-
             <div class="sidebar-box">
                 <h3>Arkiv</h3>
                 <p>» Oktober 2011</p>
                 <p>» September 2011</p>
-                <p>» August 2011</p>
             </div>
-
             <div class="sidebar-box">
-                <h3>Venner</h3>
-                <p><a href="#">v0e.blogg.no</a></p>
-                <p><a href="#">tcmn.blogg.no</a></p>
-                <p><a href="#">sophieelise.blogg.no</a></p>
+                <h3>Linker</h3>
+                <p><a href="#">V0E</a></p>
+                <p><a href="#">TCMN</a></p>
             </div>
         </aside>
     </div>
 
-    <footer style="text-align: center; padding: 20px; font-size: 10px; color: #999; border-top: 1px solid #eee;">
-        &copy; 2011 ELSKER ROSA - INGVILD TANGEN LÆGREN. DESIGN AV GEMINI.
+    <footer style="text-align:center; padding: 20px; font-size: 10px; color: #bbb;">
+        &copy; 2011 elskerrosa.blogg.no - Ingvild
     </footer>
 </div>
+
+<script>
+    function toggleComments(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
 
 </body>
 </html>
