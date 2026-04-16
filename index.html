@@ -6,130 +6,42 @@
     <title>elskerrosa.blogg.no - Ingvilds hverdag!</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* 2011 BLOGG-STIL */
         body {
             background-color: #fce4ec;
             background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
             font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #444;
+            margin: 0; padding: 0; color: #444;
         }
 
-        #wrapper {
-            width: 900px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            border: 5px solid #ff80ab;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-        }
+        #wrapper { width: 900px; margin: 20px auto; background-color: #ffffff; border: 5px solid #ff80ab; box-shadow: 0px 0px 15px rgba(0,0,0,0.1); }
+        
+        header { height: 250px; background-color: #ffc1e3; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid #ff80ab; }
+        header h1 { font-family: 'Lobster', cursive; font-size: 70px; color: #fff; text-shadow: 3px 3px 0px #ff4081; }
 
-        header {
-            height: 300px;
-            background-color: #ffc1e3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 3px solid #ff80ab;
-            position: relative;
-        }
+        nav { background: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #ffc1e3; }
+        nav a { margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 12px; color: #ff4081; text-decoration: none; cursor: pointer; }
 
-        header h1 {
-            font-family: 'Lobster', cursive;
-            font-size: 80px;
-            color: #fff;
-            text-shadow: 3px 3px 0px #ff4081;
-        }
+        #content-wrapper { display: flex; padding: 20px; }
+        main { width: 600px; padding-right: 20px; }
+        aside { width: 240px; border-left: 1px dashed #ff80ab; padding-left: 20px; }
 
-        nav {
-            background: #fff;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ffc1e3;
-        }
+        article { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .post-title { color: #ff4081; font-family: 'Lobster', cursive; font-size: 28px; cursor: pointer; display: block; }
+        .post-date { font-size: 11px; color: #999; margin-bottom: 10px; }
+        
+        .extended-content { display: none; margin-top: 15px; border-top: 1px solid #f9f9f9; padding-top: 10px; }
+        .comment-section { margin-top: 20px; padding: 15px; background: #fff5f8; border-radius: 5px; }
+        .comment { border-bottom: 1px dotted #ff80ab; padding: 8px 0; font-size: 13px; }
+        .comment-author { font-weight: bold; color: #ff4081; }
 
-        nav a {
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 12px;
-            color: #ff4081;
-            text-decoration: none;
-        }
-
-        #content-wrapper {
-            display: flex;
-            padding: 20px;
-        }
-
-        main {
-            width: 600px;
-            padding-right: 20px;
-        }
-
-        aside {
-            width: 240px;
-            border-left: 1px dashed #ff80ab;
-            padding-left: 20px;
-        }
-
-        /* Innlegg-styling */
-        article {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .post-title {
-            color: #ff4081;
-            font-family: 'Lobster', cursive;
-            font-size: 28px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-        }
-
-        .post-title:hover {
-            color: #c60055;
-        }
-
-        .post-date {
-            font-size: 11px;
-            color: #999;
-            margin-bottom: 10px;
-        }
-
-        /* Kommentarfelt-styling */
-        .comment-section {
-            display: none; /* Skjult som standard */
-            margin-top: 20px;
-            padding: 15px;
-            background: #fff5f8;
-            border-radius: 5px;
-        }
-
-        .comment {
-            border-bottom: 1px dotted #ff80ab;
-            padding: 10px 0;
-            font-size: 13px;
-        }
-
-        .comment-author {
-            font-weight: bold;
-            color: #ff4081;
-        }
-
-        .comment-meta {
-            font-size: 10px;
-            color: #aaa;
-        }
-
-        /* Sidebar */
+        /* Spill-styling */
+        #game-container { display: none; text-align: center; padding: 20px; }
+        #game-canvas { background: #fff; border: 2px solid #ff80ab; display: block; margin: 0 auto; }
+        
+        .heart { color: #ff4081; }
         .sidebar-box { margin-bottom: 25px; }
         .sidebar-box h3 { background: #ff80ab; color: white; padding: 5px; font-size: 14px; text-align: center; }
-        .profile-pic { width: 100%; height: 200px; background: #eee; border: 2px solid #ff80ab; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: #999; font-style: italic; }
-
-        .heart { color: #ff4081; }
+        .profile-pic { width: 100%; height: 180px; background: #ffd1dc; border: 2px solid #ff80ab; display: flex; align-items: center; justify-content: center; color: #ff4081; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -140,112 +52,67 @@
     </header>
 
     <nav>
-        <a href="#">Hjem</a>
-        <a href="#">Bilder</a>
+        <a onclick="showSection('blog')">Hjem</a>
+        <a onclick="showSection('game')">INGVILD RUN (SPILL!)</a>
         <a href="#">Om Ingvild</a>
-        <a href="#">Kontakt</a>
     </nav>
 
     <div id="content-wrapper">
-        <main>
+        <main id="blog-posts">
             <article>
-                <div class="post-date">Publisert: 12.10.2011 kl 15:20</div>
-                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c1')">ROSA LIVSSTIL! <span class="heart">♥</span></a>
-                <p>Oisann! Se hva jeg kjøpte i dag! En helt nydelig lipgloss og en genser. Gjetter dere fargen? Hehe!</p>
-                <div class="post-footer" style="font-size:12px; color:#ff80ab;">Klikk på overskriften for å se kommentarer...</div>
-
-                <div id="c1" class="comment-section">
-                    <h4>Kommentarer:</h4>
-                    <div class="comment">
-                        <span class="comment-author">Maiken:</span> SÅ fin!!! Hvor er genseren fra?? <span class="heart">♥</span><br>
-                        <span class="comment-meta">12.10.2011 kl 15:45</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Anonym:</span> Du er så pen Ingvild! Elsker bloggen din! :D<br>
-                        <span class="comment-meta">12.10.2011 kl 16:10</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Lise:</span> du bruker alt for mye rosa... :S<br>
-                        <span class="comment-meta">12.10.2011 kl 17:00</span>
+                <div class="post-date">12.10.2011 - kl 15:20</div>
+                <a class="post-title" onclick="togglePost('p1')">ROSA LIVSSTIL E BEST! <span class="heart">♥</span></a>
+                <p>Æ e så sykt fornøyd med dagen i dag!</p>
+                <div id="p1" class="extended-content">
+                    <p>Sjøh, æ va på City Syd i dag og fant den fineste genseren på BikBok! Den va selvfølgelig rosa. Æ kjenne at hele humøret bli liksom berre "wow" med en gang æ ser fargen. Mamma trur æ har blitt sprø, men æ synes alle som itj like rosa e de som e sprø, hehe! </p>
+                    <p>Æ har også kjøpt mæ ny lipgloss fra Isadora. Den glittre så sykt mye! No ska æ berre slapp av og hør på Justin Bieber resten av kvelden. Kos dokker masse!</p>
+                    <div class="comment-section">
+                        <div class="comment"><span class="comment-author">Maiken:</span> SÅ fin!!! Må se bilde av genseren snart!! <span class="heart">♥</span></div>
+                        <div class="comment"><span class="comment-author">Anonym:</span> Du e så søt Ingvild :D</div>
                     </div>
                 </div>
             </article>
 
             <article>
-                <div class="post-date">10.10.2011 kl 20:05</div>
-                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c2')">Gutte-drama og sukkerspinn...</a>
-                <p>Hvorfor er gutter så teite? Blir så oppgitt. Drømmeprinsen finnes vel bare i Disney-filmer? :(</p>
-                
-                <div id="c2" class="comment-section">
-                    <h4>Kommentarer:</h4>
-                    <div class="comment">
-                        <span class="comment-author">Silje:</span> Ååå vennen, han fortjener deg ikke!! <span class="heart">♥</span><br>
-                        <span class="comment-meta">10.10.2011 kl 20:30</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Peder_94:</span> jeg kan være drømmeprinsen din ;) hehe neida. fin blogg!<br>
-                        <span class="comment-meta">10.10.2011 kl 21:00</span>
+                <div class="post-date">10.10.2011 - kl 20:05</div>
+                <a class="post-title" onclick="togglePost('p2')">Gutte-drama og kjipe greia...</a>
+                <p>Koffer e gutta så fole komplisert egentlig?</p>
+                <div id="p2" class="extended-content">
+                    <p>Æ bli så oppgitt at æ sjer stjerna! Her sitte æ og vente på svar, og så sjer æ at han e "online" men itj svare mæ? Ka e greia med det da? Sjøh, æ har itj tid te sånt tull. Æ e jo egentlig en prinsesse, og prinsessa ska itj treng å vent! </p>
+                    <p>Trur kanskje æ berre ska fokuser på mæ sjøl en stund no. Kanskje drømmeprinsen dukke opp i Bergen? Det sies jo at dæm e hyggeligere der, haha! Noen som har tips te korsen æ ska få han te å svar?</p>
+                    <div class="comment-section">
+                        <div class="comment"><span class="comment-author">Silje:</span> Han e itj verdt tåran dine, snuppa! Kom over te mæ på smågodt i mårra?</div>
                     </div>
                 </div>
             </article>
 
             <article>
-                <div class="post-date">08.10.2011 kl 12:00</div>
-                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c3')">BERGEN HALVMARATON 2012?!</a>
-                <p>Nå er det bestemt! Jeg skal flytte til Bergen og løpe halvmaraton. Har kjøpt rosa løpeshorts allerede!</p>
-                
-                <div id="c3" class="comment-section">
-                    <h4>Kommentarer:</h4>
-                    <div class="comment">
-                        <span class="comment-author">Løpe-Lise:</span> Så flink du er! Bergen er verdens fineste by!<br>
-                        <span class="comment-meta">08.10.2011 kl 13:00</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Sander:</span> 2,1 mil er langt da.. lykke til haha!<br>
-                        <span class="comment-meta">08.10.2011 kl 14:15</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Mamma:</span> Gleder meg til du flytter hjemmefra (neida, tulla!) Lykke til vennen! <span class="heart">♥</span><br>
-                        <span class="comment-meta">08.10.2011 kl 15:00</span>
+                <div class="post-date">08.10.2011 - kl 12:00</div>
+                <a class="post-title" onclick="togglePost('p3')">DRØMMEN OM BERGEN! <span class="heart">♥</span></a>
+                <p>Æ ska flytt! Eller, om nån år da...</p>
+                <div id="p3" class="extended-content">
+                    <p>Æ har bestemt mæ for at Bergen e byen for mæ. Æ sjer for mæ at æ bor i en hvit trehus-greie og spring rundt på brostein. Og det aller kuleste: Æ ska løp Bergen Halvmaraton! </p>
+                    <p>Æ har aldri løpt så langt før, æ bli jo andpusten av å gå te bussen, men hvis æ har rosa løpesko og rosa tights så går det sikkert bra! Æ har allerede sjekka ut ruta, og det sjer så fint ut. Må berre begynn å tren no da... æsj, trening e kjedelig, men må man så må man!</p>
+                    <div class="comment-section">
+                        <div class="comment"><span class="comment-author">Løpe-Lise:</span> Du klare det!! Heia Ingvild!</div>
+                        <div class="comment"><span class="comment-author">Mamma:</span> Husk å spis nok mat hvis du ska tren så mye da, vennen.</div>
                     </div>
                 </div>
             </article>
-
-            <article>
-                <div class="post-date">05.10.2011 kl 18:30</div>
-                <a href="javascript:void(0)" class="post-title" onclick="toggleComments('c4')">Dagens outfit - OOTD</a>
-                <p>Outfiten min i dag er veldig inspirert av Barbie! Elsker det!</p>
-                
-                <div id="c4" class="comment-section">
-                    <h4>Kommentarer:</h4>
-                    <div class="comment">
-                        <span class="comment-author">Hater:</span> du tror du er så deilig...<br>
-                        <span class="comment-meta">05.10.2011 kl 19:00</span>
-                    </div>
-                    <div class="comment">
-                        <span class="comment-author">Ingvild:</span> @Hater: Og du har ikke noe liv som kommenterer her, hehe! <span class="heart">♥</span><br>
-                        <span class="comment-meta">05.10.2011 kl 19:10</span>
-                    </div>
-                </div>
-            </article>
-
         </main>
+
+        <div id="game-container">
+            <h2 style="font-family:'Lobster'; color:#ff4081;">INGVILD RUN: VEIEN TE BERGEN!</h2>
+            <p style="font-size:12px;">Trykk på <b>Mellomrom</b> eller <b>Klikk</b> for å hopp over dæm kjedelige blåe skoan!</p>
+            <canvas id="game-canvas" width="600" height="200"></canvas>
+            <p id="score" style="font-weight:bold; color:#ff4081; font-size:20px;">Poeng: 0</p>
+        </div>
 
         <aside>
             <div class="sidebar-box">
                 <h3>Om Ingvild</h3>
-                <div class="profile-pic">[Bilde av Ingvild]</div>
-                <p>Jente på 17 år som elsker alt som er rosa! Velkommen til min verden!</p>
-            </div>
-            <div class="sidebar-box">
-                <h3>Arkiv</h3>
-                <p>» Oktober 2011</p>
-                <p>» September 2011</p>
-            </div>
-            <div class="sidebar-box">
-                <h3>Linker</h3>
-                <p><a href="#">V0E</a></p>
-                <p><a href="#">TCMN</a></p>
+                <div class="profile-pic">ROSA <br> IS <br> LIFE</div>
+                <p>Heisann! Æ e Ingvild. Æ e en trønderjente som elske rosa, vennan mine og drømme om Bergen! <span class="heart">♥</span></p>
             </div>
         </aside>
     </div>
@@ -256,14 +123,96 @@
 </div>
 
 <script>
-    function toggleComments(id) {
-        var x = document.getElementById(id);
-        if (x.style.display === "block") {
-            x.style.display = "none";
+    function togglePost(id) {
+        var post = document.getElementById(id);
+        post.style.display = (post.style.display === "block") ? "none" : "block";
+    }
+
+    function showSection(section) {
+        if (section === 'blog') {
+            document.getElementById('blog-posts').style.display = 'block';
+            document.getElementById('game-container').style.display = 'none';
         } else {
-            x.style.display = "block";
+            document.getElementById('blog-posts').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+            resetGame();
         }
     }
+
+    // ENKELT SPILL SCRIPT
+    const canvas = document.getElementById('game-canvas');
+    const ctx = canvas.getContext('2d');
+    let score = 0;
+    let isJumping = false;
+    let gameSpeed = 3;
+    let player = { x: 50, y: 150, w: 30, h: 30, dy: 0, jumpForce: 10, gravity: 0.6 };
+    let obstacles = [];
+
+    function resetGame() {
+        score = 0;
+        obstacles = [];
+        player.y = 150;
+        player.dy = 0;
+        gameRunning = true;
+        update();
+    }
+
+    function spawnObstacle() {
+        if (Math.random() < 0.02) {
+            obstacles.push({ x: 600, y: 160, w: 20, h: 40 });
+        }
+    }
+
+    function update() {
+        if (document.getElementById('game-container').style.display === 'none') return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Bakken
+        ctx.strokeStyle = '#ff80ab';
+        ctx.beginPath(); ctx.moveTo(0, 190); ctx.lineTo(600, 190); ctx.stroke();
+
+        // Spiller (Ingvild i rosa)
+        player.dy += player.gravity;
+        player.y += player.dy;
+        if (player.y > 160) { player.y = 160; player.dy = 0; isJumping = false; }
+        ctx.fillStyle = '#ff4081';
+        ctx.fillRect(player.x, player.y, player.w, player.h);
+        ctx.fillStyle = '#fff'; ctx.fillText("♥", player.x + 10, player.y + 20);
+
+        // Hindringer (Blå sko)
+        for (let i = obstacles.length - 1; i >= 0; i--) {
+            obstacles[i].x -= gameSpeed;
+            ctx.fillStyle = '#1a237e';
+            ctx.fillRect(obstacles[i].x, obstacles[i].y, obstacles[i].w, obstacles[i].h);
+
+            // Kollisjon
+            if (player.x < obstacles[i].x + obstacles[i].w &&
+                player.x + player.w > obstacles[i].x &&
+                player.y < obstacles[i].y + obstacles[i].h &&
+                player.y + player.h > obstacles[i].y) {
+                alert("Æsj, kjipe sko! Poeng: " + Math.floor(score));
+                resetGame();
+                return;
+            }
+            if (obstacles[i].x < -20) obstacles.splice(i, 1);
+        }
+
+        score += 0.1;
+        document.getElementById('score').innerText = "Poeng: " + Math.floor(score);
+        spawnObstacle();
+        requestAnimationFrame(update);
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && !isJumping) {
+            player.dy = -player.jumpForce;
+            isJumping = true;
+        }
+    });
+    canvas.addEventListener('mousedown', () => {
+        if (!isJumping) { player.dy = -player.jumpForce; isJumping = true; }
+    });
 </script>
 
 </body>
